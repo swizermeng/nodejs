@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://localhost:8080/login" method="get">
+        用户：<input type="text" name="username" id="username"><br />
+        密码：<input type="text" name="password" id="password"><br />
+        <input type="button" value="注册" id="reg">
+        <input type="button" value="登录" id="login">
+    </form>
+</body>
+
+<script type="text/javascript">
+    // 注册
+    document.querySelector('#reg').addEventListener('click', async () => {
+        const response = await fetch(
+            `/reg?username=${document.querySelector('#username').value}&password=${document.querySelector('#password').value}`
+        )
+        const result = await response.json()
+        console.log(result)
+        alert(result.msg)
+    },false)
+
+    // 登录
+    document.querySelector('#login').addEventListener('click', async () => {
+        const response = await fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: document.querySelector('#username').value,
+                password: document.querySelector('#password').value
+            })
+        })
+        const result = await response.json()
+        console.log(result)
+        alert(result.msg)
+    }, false)
+</script>
+
+</html>
