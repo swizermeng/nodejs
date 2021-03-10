@@ -1,0 +1,11 @@
+{
+    "name": "nodejs-learning",
+    "scripts": {
+        "fix-memory-limit": "cross-env LIMIT=8000 increase-memory-limit"
+    },
+    "dependencies": {
+        "cross-env": "^7.0.3",
+        "http-server": "^0.12.3",
+        "increase-memory-limit": "^1.0.7"
+    }
+}
