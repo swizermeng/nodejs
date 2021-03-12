@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="http://192.168.0.62:8081/websocket/socket.js"></script>
+<!-- <script src="node_modules/socket.io-client/dist/socket.io.js"></script> -->
+<script>
+    const socket = io.connect('ws://localhost:8080/')
+    socket.emit('msg', '客户端向服务端发送的第一条数据', '客户端向服务端发送的第二条数据')
+    socket.on('msg', (...msgs) => {
+        console.log(msgs)
+    })
+    socket.on('timer', (time) => {
+        console.log(time)
+    })
+</script>
+</html>
