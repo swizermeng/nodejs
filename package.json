@@ -6,6 +6,9 @@
     "dependencies": {
         "cross-env": "^7.0.3",
         "http-server": "^0.12.3",
-        "increase-memory-limit": "^1.0.7"
+        "increase-memory-limit": "^1.0.7",
+        "multiparty": "^4.2.2",
+        "mysql": "^2.18.1",
+        "socket.io": "^2.2.0"
     }
 }
